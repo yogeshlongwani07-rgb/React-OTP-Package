@@ -1,0 +1,60 @@
+{
+  "name": "react-otp-swift",
+  "version": "1.0.0",
+  "description": "A lightweight, dynamic, fully-accessible OTP input component for React. Supports any length, paste, keyboard navigation, error shake, resend timer and full customisation.",
+  "type": "module",
+  "main": "./dist/react-otp-swift.umd.cjs",
+  "module": "./dist/react-otp-swift.js",
+  "exports": {
+    ".": {
+      "import": "./dist/react-otp-swift.js",
+      "require": "./dist/react-otp-swift.umd.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "react",
+    "otp",
+    "one-time-password",
+    "otp-input",
+    "verification",
+    "pin-input",
+    "passcode",
+    "mfa",
+    "two-factor",
+    "2fa",
+    "react-component",
+    "accessible"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/react-otp-swift"
+  },
+  "homepage": "https://github.com/your-username/react-otp-swift#readme",
+  "bugs": {
+    "url": "https://github.com/your-username/react-otp-swift/issues"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "esbuild": "^0.28.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "vite": "^8.0.4"
+  }
+}
