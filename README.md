@@ -25,13 +25,8 @@ A lightweight, dynamic, and fully-accessible OTP input component for React.
 
 ## 📦 Installation
 
-```bash
+````bash
 npm install react-otp-swift
-# or
-yarn add react-otp-swift
-# or
-pnpm add react-otp-swift
-```
 
 Requires **React ≥ 17**.
 
@@ -54,29 +49,28 @@ export default function VerifyPage() {
     />
   );
 }
-```
+````
 
 ---
 
 ## 📖 Examples
 
 ### Basic 6-digit OTP
+
 ```jsx
 <OtpInput length={6} onComplete={(code) => verifyOtp(code)} />
 ```
 
 ### Controlled component
+
 ```jsx
 const [otp, setOtp] = useState("");
 
-<OtpInput
-  length={6}
-  value={otp}
-  onChange={setOtp}
-/>
+<OtpInput length={6} value={otp} onChange={setOtp} />;
 ```
 
 ### Show error with shake animation
+
 ```jsx
 const [hasError, setHasError] = useState(false);
 
@@ -86,11 +80,14 @@ const [hasError, setHasError] = useState(false);
   onComplete={(code) => {
     if (code !== correctOtp) setHasError(true);
   }}
-/>
-{hasError && <p style={{ color: "red" }}>Incorrect OTP. Try again.</p>}
+/>;
+{
+  hasError && <p style={{ color: "red" }}>Incorrect OTP. Try again.</p>;
+}
 ```
 
 ### With built-in resend timer
+
 ```jsx
 <OtpInput
   length={6}
@@ -105,6 +102,7 @@ const [hasError, setHasError] = useState(false);
 ```
 
 ### Custom styling
+
 ```jsx
 <OtpInput
   length={4}
@@ -120,6 +118,7 @@ const [hasError, setHasError] = useState(false);
 ```
 
 ### With separator between inputs
+
 ```jsx
 <OtpInput
   length={6}
@@ -129,6 +128,7 @@ const [hasError, setHasError] = useState(false);
 ```
 
 ### Alpha-numeric PIN (e.g. gift card codes)
+
 ```jsx
 <OtpInput
   length={8}
@@ -139,6 +139,7 @@ const [hasError, setHasError] = useState(false);
 ```
 
 ### Full real-world example
+
 ```jsx
 import { useState } from "react";
 import OtpInput from "react-otp-swift";
@@ -175,7 +176,9 @@ export default function VerifyPage() {
       />
 
       {status === "success" && <p style={{ color: "green" }}>✅ Verified!</p>}
-      {status === "error"   && <p style={{ color: "red"  }}>❌ Wrong code, try again.</p>}
+      {status === "error" && (
+        <p style={{ color: "red" }}>❌ Wrong code, try again.</p>
+      )}
     </div>
   );
 }
@@ -185,40 +188,40 @@ export default function VerifyPage() {
 
 ## ⚙️ Props
 
-| Prop | Type | Default | Description |
-|---|---|---|---|
-| `length` | `number` | `6` | Number of OTP input boxes |
-| `value` | `string` | — | Controlled value. Use together with `onChange` |
-| `onChange` | `(otp: string) => void` | — | Called on every keystroke with the current OTP string |
-| `onComplete` | `(otp: string) => void` | — | Called when all fields are filled |
-| `autoFocus` | `boolean` | `true` | Auto-focus the first box on mount |
-| `disabled` | `boolean` | `false` | Disable all inputs |
-| `isAlphaNumeric` | `boolean` | `false` | Allow letters as well as digits |
-| `placeholder` | `string` | `''` | Placeholder character for each empty box |
-| `inputClassName` | `string` | `''` | Extra CSS class(es) on every input |
-| `inputStyle` | `object` | `{}` | Inline styles for every input |
-| `containerClassName` | `string` | `''` | Extra CSS class(es) on the wrapper div |
-| `containerStyle` | `object` | `{}` | Inline styles for the wrapper div |
-| `showSeparator` | `boolean` | `false` | Render a separator between inputs |
-| `separator` | `ReactNode` | `—` | Custom separator element |
-| `shakeOnError` | `boolean` | `true` | Animate a shake when `hasError` is `true` |
-| `hasError` | `boolean` | `false` | Marks inputs with a red border and triggers shake |
-| `showResend` | `boolean` | `false` | Render built-in Resend button with countdown |
-| `resendTimeout` | `number` | `30` | Countdown in seconds before Resend becomes active |
-| `onResend` | `() => void` | — | Called when the user clicks Resend |
-| `resendLabel` | `string` | `'Resend OTP'` | Label for the Resend button / countdown text |
+| Prop                 | Type                    | Default        | Description                                           |
+| -------------------- | ----------------------- | -------------- | ----------------------------------------------------- |
+| `length`             | `number`                | `6`            | Number of OTP input boxes                             |
+| `value`              | `string`                | —              | Controlled value. Use together with `onChange`        |
+| `onChange`           | `(otp: string) => void` | —              | Called on every keystroke with the current OTP string |
+| `onComplete`         | `(otp: string) => void` | —              | Called when all fields are filled                     |
+| `autoFocus`          | `boolean`               | `true`         | Auto-focus the first box on mount                     |
+| `disabled`           | `boolean`               | `false`        | Disable all inputs                                    |
+| `isAlphaNumeric`     | `boolean`               | `false`        | Allow letters as well as digits                       |
+| `placeholder`        | `string`                | `''`           | Placeholder character for each empty box              |
+| `inputClassName`     | `string`                | `''`           | Extra CSS class(es) on every input                    |
+| `inputStyle`         | `object`                | `{}`           | Inline styles for every input                         |
+| `containerClassName` | `string`                | `''`           | Extra CSS class(es) on the wrapper div                |
+| `containerStyle`     | `object`                | `{}`           | Inline styles for the wrapper div                     |
+| `showSeparator`      | `boolean`               | `false`        | Render a separator between inputs                     |
+| `separator`          | `ReactNode`             | `—`            | Custom separator element                              |
+| `shakeOnError`       | `boolean`               | `true`         | Animate a shake when `hasError` is `true`             |
+| `hasError`           | `boolean`               | `false`        | Marks inputs with a red border and triggers shake     |
+| `showResend`         | `boolean`               | `false`        | Render built-in Resend button with countdown          |
+| `resendTimeout`      | `number`                | `30`           | Countdown in seconds before Resend becomes active     |
+| `onResend`           | `() => void`            | —              | Called when the user clicks Resend                    |
+| `resendLabel`        | `string`                | `'Resend OTP'` | Label for the Resend button / countdown text          |
 
 ---
 
 ## 🎹 Keyboard Support
 
-| Key | Action |
-|---|---|
-| `0–9` / `a–z` | Enter the character and move focus to the next field |
-| `Backspace` | Clear current field; if empty, clear and focus previous |
-| `ArrowRight` | Move focus to next field |
-| `ArrowLeft` | Move focus to previous field |
-| `Ctrl/Cmd + V` | Paste: fills all fields from clipboard text |
+| Key            | Action                                                  |
+| -------------- | ------------------------------------------------------- |
+| `0–9` / `a–z`  | Enter the character and move focus to the next field    |
+| `Backspace`    | Clear current field; if empty, clear and focus previous |
+| `ArrowRight`   | Move focus to next field                                |
+| `ArrowLeft`    | Move focus to previous field                            |
+| `Ctrl/Cmd + V` | Paste: fills all fields from clipboard text             |
 
 ---
 
@@ -236,4 +239,4 @@ Contributions, issues, and feature requests are welcome!
 
 ## 📄 License
 
-MIT © [Your Name](https://github.com/your-username)
+Yogesh Longwani
