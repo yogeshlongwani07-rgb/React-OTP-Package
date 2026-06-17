@@ -1,5 +1,5 @@
 {
-  "name": "react-otp-swift",
+  "name": "react-otp-package",
   "version": "1.0.0",
   "description": "A lightweight, dynamic, fully-accessible OTP input component for React. Supports any length, paste, keyboard navigation, error shake, resend timer and full customisation.",
   "type": "module",

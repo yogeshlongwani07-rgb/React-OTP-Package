@@ -1,10 +1,10 @@
-# react-otp-swift
+# react-otp-package
 
 A lightweight, dynamic, and fully-accessible OTP input component for React.
 
-[![npm version](https://img.shields.io/npm/v/react-otp-swift.svg)](https://www.npmjs.com/package/react-otp-swift)
-[![bundle size](https://img.shields.io/bundlephobia/minzip/react-otp-swift)](https://bundlephobia.com/package/react-otp-swift)
-[![license](https://img.shields.io/npm/l/react-otp-swift)](LICENSE)
+[![npm version](https://img.shields.io/npm/v/react-otp-package.svg)](https://www.npmjs.com/package/react-otp-package)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/react-otp-package)](https://bundlephobia.com/package/react-otp-package)
+[![license](https://img.shields.io/npm/l/react-otp-package)](LICENSE)
 
 ---
 
@@ -26,7 +26,7 @@ A lightweight, dynamic, and fully-accessible OTP input component for React.
 ## 📦 Installation
 
 ````bash
-npm install react-otp-swift
+npm install react-otp-package
 
 Requires **React ≥ 17**.
 
@@ -36,7 +36,7 @@ Requires **React ≥ 17**.
 
 ```jsx
 import { useState } from "react";
-import OtpInput from "react-otp-swift";
+import OtpInput from "react-otp-package";
 
 export default function VerifyPage() {
   const [otp, setOtp] = useState("");
@@ -142,7 +142,7 @@ const [hasError, setHasError] = useState(false);
 
 ```jsx
 import { useState } from "react";
-import OtpInput from "react-otp-swift";
+import OtpInput from "react-otp-package";
 
 export default function VerifyPage() {
   const [otp, setOtp] = useState("");
